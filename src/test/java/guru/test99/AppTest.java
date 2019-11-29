@@ -1,5 +1,6 @@
 package guru.test99;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -8,25 +9,30 @@ public class AppTest {
 	
 	protected WebDriver driver;
 	@Test
-  public void guru99tutorials() throws InterruptedException {
+  public void test() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
-		        "chromedriver.exe");
+		        "D:\\Eclipse\\test99\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-        String eTitle = "Meet Guru99";
-        String aTitle = "";
-        // launch Firefox and redirect it to the Base URL
-        driver.get("http://www.guru99.com/");
-        //maximises the browser window
+        driver.get("http://3.133.87.133:8080/BMI/");
         driver.manage().window().maximize();
-        // get the actual value of the title
-        aTitle = driver.getTitle();
-        // compare the actual title  with the expected title 
-        if (aTitle.contentEquals(eTitle)){
-            System.out.println("Test Passed");
-        } else {
-            System.out.println("Test Failed");
-        }        
-        //close Firefox browser
+        driver.manage().window().maximize();
+        Thread.sleep(1000);
+        driver.findElement(By.name("weight")).sendKeys("80.0");
+        Thread.sleep(1000);
+        driver.findElement(By.name("height")).sendKeys("2.0");
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input:nth-child(8)")).click();
+        Thread.sleep(2000);
+        String h= driver.getTitle();
+        String e= "BMI Calculator";
+        driver.close();
+        if(h.equalsIgnoreCase(e)){
+        System.out.println("Success");
+        }
+        else{
+        System.out.println("Failure");
+        }       
+        
         driver.close();
 		
 	}
