@@ -12,14 +12,14 @@ public class AppTest {
 	@Test
   public void test() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
-		        "D:\\Eclipse\\test99\\chromedriver.exe");
+		        "/usr/bin/chromedriver");
 		ChromeOptions opt = new ChromeOptions();
 		opt.addArguments("--headless");
 		opt.addArguments("window-size=1920x1080");
 		opt.addArguments("--no-sandbox");
 		driver = new ChromeDriver(opt);
 		driver.get("http://3.134.101.222:8080/BMI/");
-        Thread.sleep(1000);
+                Thread.sleep(1000);
 //		driver.findElement(By.name("weight")).sendKeys("80.0"); 
 //		Thread.sleep(1000);
 //		driver.findElement(By.name("height")).sendKeys("2.0"); 
