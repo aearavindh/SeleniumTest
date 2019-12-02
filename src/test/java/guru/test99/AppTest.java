@@ -20,21 +20,19 @@ public class AppTest {
 		driver = new ChromeDriver(opt);
 		driver.get("http://3.134.101.222:8080/BMI/");
                 Thread.sleep(1000);
-//		driver.findElement(By.name("weight")).sendKeys("80.0"); 
-//		Thread.sleep(1000);
-//		driver.findElement(By.name("height")).sendKeys("2.0"); 
-//		Thread.sleep(1000);
-//		driver.findElement(By.cssSelector("input:nth-child(8)")).click();
-//		Thread.sleep(2000);
-//        String h= driver.getTitle();
-//        System.out.println(h);
-//        String e= "BMI Calculator";
-//        if(h.equalsIgnoreCase(e)){
-//        System.out.println("Success");
-//        }
-//        else{
-//        System.out.println("Failure");
-//        }       
+	        driver.findElement(By.name("weight")).sendKeys("80.0");
+		driver.findElement(By.name("height")).sendKeys("2.0"); 
+		driver.findElement(By.cssSelector("input:nth-child(8)")).click();
+       	        Thread.sleep(1000);
+          String h= driver.getTitle();
+          System.out.println(h);
+          String e= "BMI Calculator";
+          if(h.equalsIgnoreCase(e)){
+          System.out.println("Success");
+          }
+          else{
+          System.out.println("Failure");
+          }       
         driver.close();
 		
 	}
