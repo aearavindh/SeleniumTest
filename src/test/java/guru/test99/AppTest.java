@@ -16,7 +16,7 @@ public class AppTest {
 		ChromeOptions opt = new ChromeOptions();
 		opt.addArguments("--headless");
 		opt.addArguments("window-size=1920x1080");
-		opt.addArguments("--no-sandbox");
+		//opt.addArguments("--no-sandbox");
 		driver = new ChromeDriver(opt);
 		driver.get("http://3.134.101.222:8080/BMI/");
                 Thread.sleep(1000);
